@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <table>
+      <thead>
+        <tr>
+          <th>First Name</th>
+          <th>Last Name</th>
+        </tr>
+      </thead>
+      <tbody id="tableBody"></tbody>
+    </table>
+
+    <script>
+      // users array - 6 objects inside an array
+      const users = [
+        { firstName: "User1", lastName: "LastName1" }, //0
+        { firstName: "User2", lastName: "LastName2" }, //1
+        { firstName: "User3", lastName: "LastName3" }, //2
+        { firstName: "User4", lastName: "LastName4" }, //3
+        { firstName: "User5", lastName: "LastName5" }, //4
+        { firstName: "User6", lastName: "LastName6" }, //5
+      ];
+
+      //   targets tableBody Id
+      let tableBody = document.getElementById("tableBody");
+
+      //   forEach Loop
+      users.forEach((user, i) => {
+        // creates tr
+        let tr = document.createElement("tr");
+
+        tableBody.appendChild(tr);
+        // let rows = document.getElementById("tableBody");
+        let child = tableBody.children[i];
+
+        child.innerHTML = "<td>" + user.firstName + "</td>";
+        child.innerHTML += "<td>" + user.lastName + "</td>";
+      });
+    </script>
+  </body>
+</html>

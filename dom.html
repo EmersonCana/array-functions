@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN"
+      crossorigin="anonymous"
+    />
+  </head>
+  <body>
+    <div class="container">
+      <div class="row text-white">
+        <div class="col-md-4 bg-primary" id="div1">Sample</div>
+        <div class="col-md-4 bg-success" id="div2">Sample</div>
+        <div class="col-md-4 bg-warning" id="div3">Sample</div>
+      </div>
+      <div class="row">
+        <div class="col-12">
+          <input
+            type="text"
+            name="text"
+            id="text"
+            class="form-control d-block w-100 mt-2"
+          />
+          <select name="div" id="div" class="form-control">
+            <option value="div1">Div 1</option>
+            <option value="div2">Div 2</option>
+            <option value="div3">Div 3</option>
+          </select>
+          <button
+            id="press"
+            class="btn btn-secondary mt-2 btn-lg d-block w-100"
+            onclick="changeDivValue()"
+          >
+            Press Me!
+          </button>
+        </div>
+      </div>
+    </div>
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL"
+      crossorigin="anonymous"
+    ></script>
+    <script>
+      function changeDivValue() {
+        let d = document.getElementById("div").value;
+        let v = document.getElementById("text").value;
+        document.getElementById(d).innerHTML = v;
+      }
+    </script>
+  </body>
+</html>
