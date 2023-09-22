@@ -56,10 +56,36 @@ const firstNames = characters.map((char) => char.name.split(" ")[0]);
 console.log("Problem 4:", firstNames);
 
 //***REDUCE***
+console.log("----ARRAY REDUCE----");
 //1. Get total mass of all characters
+const totalMass = characters.reduce(
+  (accumulator, current) => (accumulator += current.mass),
+  0
+);
+console.log("Problem 1:", totalMass);
+
 //2. Get total height of all characters
+const totalHeight = characters.reduce(
+  (accumulator, current) => (accumulator += current.height),
+  0
+);
+console.log("Problem 2:", totalHeight);
+
 //3. Get total number of characters by eye color
-//4. Get total number of characters in all the character names
+const eyeColor = characters.reduce((accumulator, current) => {
+  const color = current.eye_color;
+  accumulator[color] = (accumulator[color] || 0) + 1;
+  return accumulator;
+}, {});
+console.log("Problem 3:", eyeColor);
+
+// 4. Get total number of characters in all the character names
+const charOfName = characters.reduce((accumulator, current) => {
+  accumulator += current.name.split("").length;
+  return accumulator;
+}, 0);
+
+console.log("Problem 4", charOfName);
 
 //***FILTER***
 console.log("----ARRAY FILTER----");
